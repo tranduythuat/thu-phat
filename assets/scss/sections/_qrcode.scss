@@ -1,0 +1,111 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.qrcode {
+    width: 100%;
+
+    .content {
+        @include flex-center;
+        flex-direction: column;
+        aspect-ratio: 500 / 800;
+        width: 100%;
+        background: url('https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/huy-doan/photo-bg.webp') repeat center/ contain;
+
+        .wax-box {
+            img {
+                max-width: 100px;
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .subtext {
+            font-size: 14px;
+            margin: 3% 0;
+        }
+
+        @media (max-width: 500px) {
+            .wax-box {
+                img {
+                    max-width: calc((100 / 500) * 100vw);
+                }
+            }
+
+            .subtext {
+                font-size: calc((14 / 500) * 100vw);
+            }
+        }
+    }
+}
+
+div:where(.swal2-container) div:where(.swal2-html-container) {
+    padding: 0 !important;
+}
+
+/* QR code */
+div:where(.swal2-container) img:where(.swal2-image) {
+    margin: 0 auto 1em !important;
+}
+
+div:where(.swal2-container) div:where(.swal2-actions) {
+    margin: auto !important;
+}
+
+.qrcode-box {
+    display: flex;
+    flex-direction: row-reverse;
+
+    .item {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .info {
+            margin: 3% 0;
+            line-height: 1.5;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .qrcode-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                max-width: 150px;
+                width: 100%;
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                align-items: center;
+            }
+        }
+        @media (max-width: 500px) {
+            .info {
+                font-size: calc((14 / 500) * 100vw);
+            }
+    
+            .qrcode-img {
+                img {
+                    max-width: calc((150 / 500) * 100vw);
+                    border-radius: calc((10 / 500) * 100vw);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm) {
+        font-size: calc((16 / 500) * 100vw) !important;
+    }
+
+    .qrcode-box .item .info {
+        font-size: calc((14 / 500) * 100vw);
+    }
+}

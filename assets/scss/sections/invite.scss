@@ -1,0 +1,108 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.invite {
+    width: 100%;
+
+    .content {
+        width: 100%;
+        aspect-ratio: 530 / 700;
+        background: url('../../assets/images/invite_bg.png') no-repeat center / 80%;
+        padding-top: 15%;
+
+        .saveourdate {
+            font-size: 22px;
+            font-family: $font-MtdHangbird;
+            margin-bottom: 5%;
+        }
+
+        .top-img {
+            margin-bottom: 2%;
+
+            img {
+                max-width: 254px;
+            }
+        }
+
+        .day-of-week {
+            font-size: 12px;
+            font-family: $font-SVG-gothamBook;
+            text-transform: uppercase;
+            font-style: italic;
+        }
+
+        .date {
+            font-size: 26px;
+            font-family: $font-SVG-GothamBold;
+        }
+
+        .divider {
+            margin: 3% 0;
+        }
+
+        .location-name {
+            font-size: 34px;
+            font-family: $font-MtdHangbird;
+            line-height: 1;
+            margin-bottom: 2%;
+        }
+
+        .address {
+            font-size: 12px;
+            font-family: $font-SVG-gothamBook;
+            font-style: italic;
+            line-height: 1.7;
+            margin-bottom: 2%;
+
+            .bold {
+                font-family: $font-SVG-GothamBold;
+                font-style: normal;
+            }
+        }
+
+        .map-btn {
+            max-width: 133px;
+            display: block;
+            text-decoration: none;
+            color: #eeede8ff;
+            background-color: $primary-color;
+            padding: 1%;
+            border-radius: 15px;
+            margin: 0 auto;
+            font-family: $font-main;
+        }
+
+        @media (max-width: 530px) {
+            .saveourdate {
+                font-size: calc((22 / 530) * 100vw);
+            }
+
+            .top-img {
+                img {
+                    max-width: calc((254 / 530) * 100vw);
+                }
+            }
+
+            .day-of-week {
+                font-size: calc((12 / 530) * 100vw);
+            }
+
+            .date {
+                font-size: calc((26 / 530) * 100vw);
+            }
+
+            .location-name {
+                font-size: calc((34 / 530) * 100vw);
+            }
+
+            .address {
+                font-size: calc((12 / 530) * 100vw);
+            }
+
+            .map-btn {
+                max-width: calc((133 / 530) * 100vw);
+                border-radius: calc((15 / 530) * 100vw);
+            }
+        }
+    }
+}

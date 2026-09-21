@@ -1,0 +1,74 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.letter-section {
+    width: 100%;
+    max-width: 500px;
+
+    .content {
+        width: 100%;
+        aspect-ratio: 500 / 1000;
+        background: url('../../assets/images/letter.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: #564e47ff;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.439);
+        position: relative;
+        cursor: pointer;
+        perspective: 1000px;
+        padding-bottom: 15%;
+
+        // .subtext {
+        //     font-family: $font-HLTJaneAusten;
+        //     font-size: 21px;
+        //     text-align: center;
+        // }
+
+        .group-name {
+            width: 100%;
+            top: 85%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #5a3a21ff;
+
+            .invite-text {
+                font-size: 16px;
+                font-family: $font-main;
+                text-transform: uppercase;
+                margin-bottom: 1%;
+                text-align: center;
+                font-weight: 600;
+            }
+
+            .guest-name {
+                font-family: $font-main;
+                font-size: 28px;
+                text-align: center;
+            }
+        }
+    }
+
+    @media (max-width: 500px) {
+        .content {
+            .subtext {
+                font-size: calc((21 / 500) * 100vw);
+            }
+
+            .group-name {
+                .invite-text {
+                    font-size: calc((16 / 500) * 100vw);
+                }
+
+                .guest-name {
+                    font-size: calc((28 / 500) * 100vw);
+                }
+            }
+        }
+    }
+}

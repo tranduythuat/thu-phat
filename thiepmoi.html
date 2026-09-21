@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thu & Phát</title>
+
+  <!-- Các thông tin khác cho Open Graph -->
+  <meta property="og:title" content="Thu & Phát" />
+  <meta property="og:description" content="29.11.2026" />
+  <meta property="og:type" content="website" />
+
+  <meta property="og:image" content="">
+  <meta property="og:image:width" content="600">
+  <meta property="og:image:height" content="400">
+
+  <link rel="stylesheet" href="dist/css/main.css" />
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+  <div id="lang-popup" class="lang-popup-overlay" aria-live="polite">
+    <div class="lang-popup-box">
+      <h3 class="lang-popup-title" data-i18n="lang.popupTitle">Choose your language</h3>
+      <p class="lang-popup-subtitle" data-i18n="lang.popupSubtitle">Please select your preferred language</p>
+      <div class="lang-popup-options">
+        <button type="button" class="lang-popup-btn" data-lang-choice="vi" aria-label="Tiếng Việt">
+          <!-- <span class="flag">🇻🇳</span> -->
+          <span>Tiếng Việt</span>
+        </button>
+        <button type="button" class="lang-popup-btn" data-lang-choice="en" aria-label="English">
+          <!-- <span class="flag">🇬🇧</span> -->
+          <span>English</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="lang-switcher" aria-label="Language switcher">
+    <button class="lang-switcher-toggle" type="button" aria-expanded="false">
+      <span class="flag">🇻🇳</span>
+      <span class="lang-code">VI</span>
+      <span class="caret">▾</span>
+    </button>
+    <div class="lang-switcher-menu" role="menu">
+      <button type="button" class="lang-switcher-option is-active" data-lang="vi" role="menuitem">
+        <span class="flag">🇻🇳</span>
+        <span>Tiếng Việt</span>
+      </button>
+      <button type="button" class="lang-switcher-option" data-lang="en" role="menuitem">
+        <span class="flag">🇬🇧</span>
+        <span>English</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- <div class="letter-section">
+    <div class="content" id="open-card">
+      <div class="group-name">
+        <div class="invite-text">
+          Trân trọng kính mời
+        </div>
+        <div class="guest-name">
+
+        </div>
+      </div>
+      <div class="subtext">
+        Dành cho bạn, vị khách <br />
+        đặc biệt của chúng tôi
+      </div>
+      <a href="#" class="open-card" id="open-card">Mở thiệp</a>
+    </div>
+  </div> -->
+  <div class="container">
+    <!-- SECTION 1: HERO-->
+    <section id="hero" class="hero">
+      <div class="content" data-animate="fade-in">
+        <div class="subtext" data-animate="zoom-out" data-i18n="hero.subtext">sang năm thứ mười một</div>
+        <div class="main-img">
+          <img src="assets/images/hero_bg.png" alt="" data-animate="fade-in">
+        </div>
+        <div class="couple-name" data-animate="zoom-out">Thu & Phát</div>
+        <div class="time" data-animate="fade-in">29 . 11 . 2026</div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: INVITE -->
+    <section id="invite" class="invite">
+      <div class="content" data-animate="fade-in">
+        <div class="saveourdate" data-animate="fade-in" data-i18n="invite.saveourdate">save our date</div>
+        <div class="top-img">
+          <img src="assets/images/invite_top_img.png" data-animate="flip-vertical-left" alt="">
+        </div>
+        <div class="day-of-week" data-animate="fade-in" data-i18n="invite.dayOfWeek">Sunday</div>
+        <div class="date" data-animate="fade-in">29 . 11 . 2026</div>
+        <div class="divider" data-animate="fade-in">&#9670;</div>
+        <div class="location-name" data-animate="zoom-out" data-i18n-html="invite.locationName">
+          Thiskyhall Sala <br>
+          Convention Center
+        </div>
+        <div class="address" data-animate="fade-in" data-i18n-html="invite.address">
+          <span class="bold">20th Floor – Space Above Hall</span> <br>
+          10 Mai Chí Thọ Street, An Khánh Ward, Ho Chi Minh City
+        </div>
+        <a href="#" class="map-btn" data-animate="zoom-in-out" data-i18n="invite.mapBtn">MAPS</a>
+      </div>
+    </section>
+
+    <section class="timeline">
+      <div class="content" data-animate="fade-in">
+        <div class="divider">
+          <img src="assets/images/divider.png" class="flip-vertical-left" alt="">
+        </div>
+        <div class="title" data-animate="fade-in" data-i18n="timeline.title">Timeline</div>
+        <div class="event-block">
+          <img src="assets/images/line.png" class="line" alt="">
+          <div class="timeline-item">
+            <div class="icon">
+              <img src="assets/images/icons/gate.png" class="icon-animate" alt="">
+            </div>
+            <div class="time">4:00 PM</div>
+            <div class="label" data-i18n-html="timeline.item1">Welcome <br> guests</div>
+          </div>
+          <div class="timeline-item">
+            <div class="icon">
+              <img src="assets/images/icons/rings.png" class="icon-animate" alt="">
+            </div>
+            <div class="time">4:30 PM</div>
+            <div class="label" data-i18n-html="timeline.item2">Vows <br> CEREMONY</div>
+          </div>
+          <div class="timeline-item">
+            <div class="icon">
+              <img src="assets/images/icons/cups.png" class="icon-animate" alt="">
+            </div>
+            <div class="time">5:30 PM</div>
+            <div class="label" data-i18n-html="timeline.item3">COCKTAIL & <br> DRINK</div>
+          </div>
+          <div class="timeline-item">
+            <div class="icon">
+              <img src="assets/images/icons/dinner.png" class="icon-animate" alt="">
+            </div>
+            <div class="time">7:00 PM</div>
+            <div class="label" data-i18n-html="timeline.item4">Dinner <br> RECEPTION</div>
+          </div>
+          <div class="timeline-item">
+            <div class="icon">
+              <img src="assets/images/icons/party.png" class="icon-animate" alt="">
+            </div>
+            <div class="time">8:30 PM</div>
+            <div class="label" data-i18n-html="timeline.item5">PARTY</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dresscode">
+      <div class="content" data-animate="fade-in">
+        <img src="assets/images/dresscode_bg.png" alt="" class="dresscode-bg">
+        <div class="title" data-animate="fade-in" data-i18n="dresscode.title">Dress Code</div>
+        <div class="subtext" data-animate="fade-in" data-i18n="dresscode.subtext">Formal</div>
+        <div class="color-block">
+          <div class="color-item color1" style="background-color: #471312ff;"></div>
+          <div class="color-item color2" style="background-color: #ffffffff;"></div>
+          <div class="color-item color3" style="background-color: #121627ff;"></div>
+          <div class="color-item color4" style="background-color: #b48964ff;"></div>
+        </div>
+        <img src="assets/images/dresscode_bot_img.png" class="dresscode-img-bottom" data-animate="zoom-in" alt="">
+      </div>
+    </section>
+
+    <!-- SECTION 6: RSVP -->
+    <section id="rsvp" class="rsvp">
+      <div class="content" data-animate="fade-in">
+        <h2 class="title" data-animate="fade-in" data-i18n="rsvp.title">Attendance confirmation</h2>
+        <p class="subtext" data-animate="fade-right" data-i18n-html="rsvp.subtext">
+          CONFIRMING ATTENDANCE AT THE PARTY. <br>
+          THIS HELPS US TO HOST YOU MORE THOUNGTFULLY <br>
+          AND FULLY. THANK YOU!!!</p>
+        <hr>
+        <form id="rsvpForm">
+          <div class="form-group options-group" data-animate="fade-up">
+            <input type="radio" class="confirm" id="confirm-yes" value="Sẽ tham dự" name="confirm" checked>
+            <label for="confirm-yes" class="radio-button confirm-yes" data-i18n="rsvp.confirmYes">YES</label>
+            <input type="radio" class="confirm" id="confirm-no" value="Không thể tham dự" name="confirm">
+            <label for="confirm-no" class="radio-button confirm-no" data-i18n="rsvp.confirmNo">NO</label>
+          </div>
+
+          <div class="form-group" data-animate="fade-up">
+            <input type="text" class="name input-text" id="name" name="name" placeholder="NAME"
+              data-i18n-placeholder="rsvp.namePlaceholder" required>
+          </div>
+
+          <div class="form-group vegetarian-group" data-animate="fade-up">
+            <input type="radio" class="confirm" id="confirm-non-vegetarian" value="Non-vegetarian" name="vegetarian"
+              checked>
+            <label for="confirm-non-vegetarian" class="radio-button confirm-yes"
+              data-i18n="rsvp.nonVeg">non-vegetarian</label>
+            <input type="radio" class="confirm" id="confirm-vegetarian" value="Không thể tham dự" name="vegetarian">
+            <label for="confirm-vegetarian" class="radio-button confirm-no" data-i18n="rsvp.veg">vegetarian</label>
+          </div>
+
+          <div class="wish-box">
+            <div class="form-group" data-animate="fade-right">
+              <textarea class="wish input-text" id="wish" name="wish" data-i18n-placeholder="rsvp.wishPlaceholder"
+                placeholder="WRITE A WISH FOR THE BRIDE AND GROOM"></textarea>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn" data-animate="fade-in" data-i18n="rsvp.confirmBtn">CONFIRM</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- <section class="qrcode" id="qrcode">
+      <div class="content">
+        <div class="wax-box btn-box">
+          <img src="assets/images/wax.png" alt="" id="qr-btn">
+        </div>
+        <div class="subtext">
+          Gửi quà mừng cưới dành tặng cô dâu và chú rể nhé!
+        </div>
+      </div>
+    </section> -->
+
+    <!-- SECTION 7: THANK YOU -->
+    <section id="end" class="end">
+      <div class="content" data-animate="fade-in">
+        <div class="divider">
+          <img src="assets/images/divider.png" alt="">
+        </div>
+        <div class="subtext" data-i18n="end.subtext">sang năm thứ mười một</div>
+      </div>
+    </section>
+  </div>
+
+  <div class="music-box">
+    <div class="label">
+      <div id="musicLabel" class="musicLabel" data-i18n-html="music.label">Turn the</br> Music on</div>
+    </div>
+    <div class="player" id="player-btn" aria-label="Play/Pause">
+      <img id="iconSvg" src="assets/images/cd.png" alt="Music Icon" />
+    </div>
+  </div>
+  <audio id="audio" preload="auto"
+    src="https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/music/Lana%20Del%20Rey%20-%20Say%20Yes%20To%20Heaven%20(Lyrics).mp3"
+    loop type="audio/mpeg"></audio>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="assets/js/gsap-animations.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script>
+    // const targetDate1 = new Date("2026-10-03T18:00:00");
+    // // const targetDate2 = new Date("2026-08-02T16:00:00");
+
+    // function updateCountdown(targetDate, suffix) {
+    //   const now = new Date();
+    //   const monthsEl = document.getElementById(`months-${suffix}`);
+    //   const weeksEl = document.getElementById(`weeks-${suffix}`);
+    //   const daysEl = document.getElementById(`days-${suffix}`);
+    //   const secondsEl = document.getElementById(`seconds-${suffix}`);
+
+    //   if (!monthsEl || !weeksEl || !daysEl || !secondsEl) return;
+
+    //   if (now >= targetDate) {
+    //     monthsEl.textContent = "00";
+    //     weeksEl.textContent = "00";
+    //     daysEl.textContent = "00";
+    //     secondsEl.textContent = "00";
+    //     return;
+    //   }
+
+    //   let temp = new Date(now);
+    //   let months = 0;
+
+    //   while (true) {
+    //     let next = new Date(temp);
+    //     next.setMonth(next.getMonth() + 1);
+    //     if (next > targetDate) break;
+    //     temp = next;
+    //     months++;
+    //   }
+
+    //   let remainingMs = targetDate - temp;
+    //   let remainingDays = Math.floor(remainingMs / (1000 * 60 * 60 * 24));
+    //   let weeks = Math.floor(remainingDays / 7);
+    //   let days = remainingDays % 7;
+    //   let remainingSeconds = Math.floor((targetDate - now) / 1000) % 60;
+
+    //   monthsEl.textContent = String(months).padStart(2, "0");
+    //   weeksEl.textContent = String(weeks).padStart(2, "0");
+    //   daysEl.textContent = String(days).padStart(2, "0");
+    //   secondsEl.textContent = String(remainingSeconds).padStart(2, "0");
+    // }
+
+    // updateCountdown(targetDate1, "1");
+    // // updateCountdown(targetDate2, "2");
+
+    // setInterval(() => updateCountdown(targetDate1, "1"), 1000);
+    // setInterval(() => updateCountdown(targetDate2, "2"), 1000);
+  </script>
+  <!-- <script>
+    function toggleQR(e) {
+      e.preventDefault();
+      Swal.fire({
+        title: "",
+        text: "",
+        imageUrl: "https://pub-d341ea7ec201435598469d75d8c4a056.r2.dev/khoa-chau/RW1_3371.jpg",
+        imageWidth: '100%',
+        imageHeight: "auto",
+        imageAlt: "Custom image",
+        html: `
+              <div class="qrcode-box">
+                  <div class="item">
+                    <div class="qrcode-img">
+                      <img src="assets/images/qrcode.jpg" alt="">
+                    </div>
+                    <div class="info">
+                      <p>Huynh Dang Khoa</p>
+                      <p>RYAN96</p>
+                      <p>PGD Ngô Gia Tự</p>
+                    </div>
+                  </div>
+              </div>
+          `,
+        confirmButtonColor: "#5a3a21"
+      });
+    }
+
+    const qrcode = document.getElementById('qr-btn');
+    qrcode.addEventListener("click", toggleQR);
+  </script> -->
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.end {
+    width: 100%;
+
+    .content {
+        width: 100%;
+        padding: 10% 0 15%;
+
+        .divider {
+            img {
+                max-width: 52px;
+            }
+        }
+
+        .subtext {
+            font-size: 22px;
+            font-family: $font-HLTJaneAusten-NoSecret;
+            position: relative;
+            transform: rotate(-5deg);
+            margin-top: 10%;
+
+            &::before,
+            &::after {
+                display: block;
+                position: absolute;
+                content: "";
+                max-width: 10px;
+                width: 100%;
+                aspect-ratio: 1;
+                background: url('../../assets/images/icons/diamond_icon.png') no-repeat center / contain;
+                transform: rotate(5deg);
+            }
+
+            &::after {
+                top: -50%;
+                right: 15%;
+            }
+
+            &::before {
+                bottom: 0;
+                left: 20%;
+            }
+        }
+
+
+        @media (max-width: 530px) {
+            .subtext {
+                font-size: calc((22 / 530) * 100vw);
+
+                &::before,
+                &::after {
+                    max-width: calc((10 / 530) * 100vw);
+                }
+            }
+        }
+    }
+
+}

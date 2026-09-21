@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,gBAAgB;AAChB,YAAY;AACZ,aAAa;AACb,WAAW;AACX,aAAa;AACb,iBAAiB;AACjB,qBAAqB;AACrB,wBAAwB;AACxB,sBAAsB;AACtB,wBAAwB;AACxB,yBAAyB;AACzB,sBAAsB;AACtB,oBAAoB;AACpB,wBAAwB",
+"sources": ["../../assets/scss/main.scss"],
+"names": [],
+"file": "main-test.css"
+}

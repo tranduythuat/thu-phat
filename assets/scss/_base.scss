@@ -1,0 +1,283 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: $font-main;
+    color: $primary-color;
+    font-size: $base-font-size;
+    @include flex-center;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    flex-direction: column;
+}
+
+section {
+    width: 100%;
+    // height: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.container {
+    max-width: 530px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    box-shadow: $shadow-default;
+    background: url('../../assets/images/base_bg.jpg') repeat top / contain;
+    // display: none;
+    // opacity: 0;
+}
+
+.navbar input[type="checkbox"],
+.navbar .hamburger-lines {
+    display: none;
+}
+
+.navbar {
+    opacity: 0.95;
+    position: absolute;
+    top: 0;
+    z-index: 100000;
+}
+
+.navbar-container input[type="checkbox"],
+.navbar-container .hamburger-lines {
+    display: block;
+}
+
+.navbar-container {
+    display: block;
+    position: relative;
+    height: 50px;
+}
+
+.navbar-container input[type="checkbox"] {
+    position: fixed;
+    display: block;
+    max-width: 30px;
+    width: 100%;
+    aspect-ratio: 30 / 23;
+    top: 15px;
+    right: calc(50% - 250px + 15px);
+
+    /* Đổi từ left sang right */
+    z-index: 5;
+    opacity: 0;
+}
+
+.navbar-container .hamburger-lines {
+    display: block;
+    max-width: 30px;
+    width: 100%;
+    aspect-ratio: 30 / 23;
+    position: fixed;
+    top: 15px;
+    right: calc(50% - 250px + 15px);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.navbar-container .hamburger-lines .line {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: $secondary-color;
+}
+
+.navbar-container .hamburger-lines .line1 {
+    transform-origin: 0% 0%;
+    transition: transform 0.4s ease-in-out;
+}
+
+.navbar-container .hamburger-lines .line2 {
+    transition: transform 0.2s ease-in-out;
+}
+
+.navbar-container .hamburger-lines .line3 {
+    transform-origin: 0% 100%;
+    transition: transform 0.4s ease-in-out;
+}
+
+.navbar .menu-items {
+    padding-top: 100px;
+    padding-left: 2%;
+    background: rgba(211, 209, 206, 0.893);
+    height: 100vh;
+    width: 300px;
+    max-width: 300px;
+    transform: translate(100%);
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease-in-out;
+    position: fixed;
+    right: calc(50% - 250px);
+    top: 0;
+    opacity: 0;
+}
+
+.navbar .menu-items li {
+    list-style: none;
+    padding: 1rem;
+    font-size: .9rem;
+}
+
+.navbar .menu-items li a {
+    text-decoration: none;
+    color: $primary-color;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+    position: relative;
+}
+
+.navbar .menu-items li a:hover {
+    color: #806d34;
+}
+
+.navbar-container input[type="checkbox"]:checked~.menu-items {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.navbar-container input[type="checkbox"]:checked~.hamburger-lines .line1 {
+    transform: rotate(42deg);
+}
+
+.navbar-container input[type="checkbox"]:checked~.hamburger-lines .line2 {
+    transform: scaleY(0);
+}
+
+.navbar-container input[type="checkbox"]:checked~.hamburger-lines .line3 {
+    transform: rotate(-42deg);
+}
+
+/* music */
+.music-box {
+    display: flex;
+    position: fixed;
+    bottom: 10px;
+    right: var(--fixed-control-edge, 14px);
+    cursor: pointer;
+    z-index: 100;
+
+    .label {
+        @include flex-center;
+        position: relative;
+        transform-origin: right center;
+        position: absolute;
+        right: 39%;
+        max-width: 300px;
+        width: 190%;
+        height: 100%;
+        overflow: hidden;
+
+        .musicLabel {
+            width: 100%;
+            text-align: left;
+            font-size: 12px;
+            background-color: #e4eeee;
+            color: #5a3a21;
+            padding: 3% 12%;
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+            border: 1px solid rgba(48, 44, 42, 0.124);
+            opacity: .9;
+        }
+    }
+
+    .player {
+        max-width: 55px;
+        width: 105%;
+        aspect-ratio: 1;
+        z-index: 9999;
+        @include flex-center;
+    }
+}
+
+.player #iconSvg {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 530px) {
+    body {
+        font-size: calc((11 / 530) * 100vw);
+        ;
+    }
+
+    .navbar-container input[type="checkbox"] {
+        top: 1.6%;
+        right: 2.2%;
+        max-width: 6vw;
+    }
+
+    .navbar-container .hamburger-lines {
+        top: 1.6%;
+        right: 2.2%;
+        width: 6vw;
+    }
+
+    .navbar-container .hamburger-lines .line {
+        // height: 2px;
+    }
+
+    .navbar .menu-items {
+        // width: 60%;
+    }
+
+    .navbar .menu-items li {
+        padding: 5% 6%;
+        font-size: 2.9vw;
+    }
+
+    .music-box {
+        bottom: calc((10 / 530) * 100vw);
+
+        .label {
+            max-width: calc((300 / 530) * 100vw);
+
+            .musicLabel {
+                font-size: calc((12 / 530) * 100vw);
+            }
+        }
+
+        .player {
+            max-width: calc((55 / 530) * 100vw);
+        }
+    }
+
+}
+
+.spin {
+    animation: spin 4s linear infinite;
+}
+
+/* Định nghĩa hoạt ảnh xoay */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

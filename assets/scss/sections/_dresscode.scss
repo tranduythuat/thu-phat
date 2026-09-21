@@ -1,0 +1,82 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.dresscode {
+    width: 100%;
+
+    .content {
+        width: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 25%;
+
+        .dresscode-bg {
+            position: absolute;
+            max-width: 445px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .title {
+            font-family: $font-MtdHangbird;
+            font-size: 42px;
+            margin-top: 18%;
+        }
+
+        .subtext {
+            font-size: 16px;
+            font-family: $font-SVG-gothamBook;
+            margin-bottom: 5%;
+        }
+
+        .color-block {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            gap: 2%;
+            margin-bottom: 30%;
+
+            .color-item {
+                width: 100%;
+                display: block;
+                max-width: 25px;
+                aspect-ratio: 1;
+                background-color: black;
+                border-radius: 50%;
+                border: 1px solid rgba(97, 21, 21, 0.438);
+            }
+        }
+
+        .dresscode-img-bottom {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 530px) {
+            .dresscode-bg {
+                max-width: calc((445 / 530) * 100vw);
+            }
+
+            .title {
+                font-size: calc((42 / 530) * 100vw);
+            }
+
+            .subtext {
+                font-size: calc((16 / 530) * 100vw);
+            }
+
+            .color-block {
+                .color-item {
+                    max-width: calc((25 / 530) * 100vw);
+                }
+            }
+
+            .dresscode-img-bottom {
+                max-width: calc((400 / 530) * 100vw);
+            }
+        }
+    }
+
+}
