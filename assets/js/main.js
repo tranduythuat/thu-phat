@@ -783,6 +783,10 @@
     };
 
     document.querySelectorAll("[data-animate]").forEach((el) => {
+      if (el.dataset.animateBound === "true") return;
+      el.dataset.animateBound = "true";
+      gsap.set(el, { willChange: "transform, opacity, filter" });
+
       const type = el.dataset.animate;
       const fn = animationMap[type];
 

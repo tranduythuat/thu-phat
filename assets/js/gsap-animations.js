@@ -1,4 +1,12 @@
 // Không dùng export để hỗ trợ chạy bằng script thuần
+const createScrollTrigger = (element, start = "top 85%", extra = {}) => ({
+  trigger: element,
+  start,
+  once: true,
+  toggleActions: "play none none none",
+  ...extra,
+});
+
 function gsapFlipIn(selector) {
   gsap.utils.toArray(selector).forEach((el) => {
     gsap.to(el, {
@@ -8,11 +16,7 @@ function gsapFlipIn(selector) {
       opacity: 1,
       duration: 2,
       ease: "back.out(1.5)",
-      scrollTrigger: {
-        trigger: el,
-        start: "top 85%",
-        toggleActions: "play none none none",
-      },
+      scrollTrigger: createScrollTrigger(el),
     });
   });
 }
@@ -20,11 +24,7 @@ function gsapFlipIn(selector) {
 function gsapFlipInThenYoyo(selector) {
   gsap.utils.toArray(selector).forEach((el) => {
     let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: el,
-        start: "top 85%",
-        toggleActions: "play none none none",
-      }
+      scrollTrigger: createScrollTrigger(el),
     });
 
     tl.to(el, {
@@ -63,11 +63,7 @@ function gsapFadeIn(element, options = {}) {
       delay,
       duration,
       ease: "power2.out",
-      scrollTrigger: {
-        trigger: element,
-        start: scrollStart,
-        toggleActions: "play none none none",
-      },
+      scrollTrigger: createScrollTrigger(element, scrollStart),
       clearProps: "filter",
     }
   );
@@ -89,11 +85,7 @@ function gsapZoomIn(element, options = {}) {
       delay,
       duration,
       ease: "power2.out",
-      scrollTrigger: {
-        trigger: element,
-        start: scrollStart,
-        toggleActions: "play none none none",
-      },
+      scrollTrigger: createScrollTrigger(element, scrollStart),
       clearProps: "transform",
     }
   );
@@ -115,11 +107,7 @@ function gsapZoomOut(element, options = {}) {
       delay,
       duration,
       ease: "power2.out",
-      scrollTrigger: {
-        trigger: element,
-        start: scrollStart,
-        toggleActions: "play none none none",
-      },
+      scrollTrigger: createScrollTrigger(element, scrollStart),
       clearProps: "transform",
     }
   );
@@ -136,11 +124,7 @@ function gsapZoomInOutLoop(element, options = {}) {
   } = options;
 
   const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: element,
-      start: scrollStart,
-      toggleActions: "play none none none",
-    }
+    scrollTrigger: createScrollTrigger(element, scrollStart),
   });
 
   // Zoom-in xuất hiện
@@ -181,11 +165,7 @@ function gsapFadeInForEnd(selector) {
         duration: 1,
         ease: "power2.out",
         clearProps: "filter",
-        scrollTrigger: {
-          trigger: el,
-          start: "top 100%",
-          toggleActions: "play none none none"
-        }
+        scrollTrigger: createScrollTrigger(el, "top 100%")
       }
     );
   });
@@ -195,13 +175,8 @@ function gsapFadeInForEnd(selector) {
 
 function gsapFadeInThenYoyo(selector) {
   gsap.utils.toArray(selector).forEach((el) => {
-    let sway;
     const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: el,
-        start: "top 85%",
-        toggleActions: "play none none none",
-      }
+      scrollTrigger: createScrollTrigger(el),
     });
 
     tl.fromTo(
@@ -238,11 +213,7 @@ function gsapFadeInThenPulse(selector) {
   gsap.utils.toArray(selector).forEach((el) => {
     el.classList.add("pulse");
     const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: el,
-        start: "top 85%",
-        toggleActions: "play none none none", // không none
-      }
+      scrollTrigger: createScrollTrigger(el),
     });
 
     // 1️⃣ Fade-in
@@ -293,11 +264,7 @@ function gsapFadeRight(element, options = {}) {
       duration: duration,
       delay: delay,
       ease: "power2.out",
-      scrollTrigger: {
-        trigger: element,
-        start: scrollStart,
-        toggleActions: "play none none none",
-      },
+      scrollTrigger: createScrollTrigger(element, scrollStart),
     }
   );
 }
@@ -312,11 +279,7 @@ function gsapFadeLeft(selector) {
         x: 0,
         duration: 1,
         ease: "power2.out",
-        scrollTrigger: {
-          trigger: el,
-          start: "top 85%",
-          toggleActions: "play none none none",
-        },
+        scrollTrigger: createScrollTrigger(el),
       }
     );
   });
@@ -333,11 +296,7 @@ function gsapFadeUp(selector) {
         y: 0,
         duration: 1,
         ease: "power2.out",
-        scrollTrigger: {
-          trigger: el,
-          start: "top 85%",
-          toggleActions: "play none none none",
-        },
+        scrollTrigger: createScrollTrigger(el),
       }
     );
   });
@@ -353,11 +312,7 @@ function gsapFadeDown(selector) {
         y: 0,
         duration: 1,
         ease: "power2.out",
-        scrollTrigger: {
-          trigger: el,
-          start: "top 85%",
-          toggleActions: "play none none none",
-        },
+        scrollTrigger: createScrollTrigger(el),
       }
     );
   });
@@ -373,11 +328,7 @@ function gsapFlipVerticalLeft(selector) {
       duration: 2,
       ease: "back.out(1.2)",
       transformOrigin: "center center",
-      scrollTrigger: {
-        trigger: el,
-        start: "top 85%",
-        toggleActions: "play none none none",
-      },
+      scrollTrigger: createScrollTrigger(el),
     });
   });
 }
@@ -391,11 +342,7 @@ function gsapFlipVerticalBottom(selector) {
       duration: 2,
       ease: "back.out(1.2)",
       transformOrigin: "center center",
-      scrollTrigger: {
-        trigger: el,
-        start: "top 85%",
-        toggleActions: "play none none none",
-      },
+      scrollTrigger: createScrollTrigger(el),
     });
   });
 }
@@ -410,11 +357,7 @@ function gsapRotateBottomLeft(selector) {
       duration: 1.2,
       ease: "back.out(1.2)",
       transformOrigin: "left bottom",
-      scrollTrigger: {
-        trigger: el,
-        start: "top 85%",
-        toggleActions: "play none none none",
-      },
+      scrollTrigger: createScrollTrigger(el),
     });
   });
 }
@@ -429,11 +372,7 @@ function gsapRotateBottomRight(selector) {
       duration: 1.2,
       ease: "back.out(1.2)",
       transformOrigin: "right bottom",
-      scrollTrigger: {
-        trigger: el,
-        start: "top 85%",
-        toggleActions: "play none none none",
-      },
+      scrollTrigger: createScrollTrigger(el),
     });
   });
 }
@@ -441,11 +380,7 @@ function gsapRotateBottomRight(selector) {
 function gsapRotateBottomLeftThenYoyo(selector) {
   gsap.utils.toArray(selector).forEach((el) => {
     const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: el,
-        start: "top 85%",
-        toggleActions: "play none none none",
-      }
+      scrollTrigger: createScrollTrigger(el),
     });
 
     tl.from(el, {
@@ -472,11 +407,7 @@ function gsapRotateBottomLeftThenYoyo(selector) {
 function gsapRotateBottomRightThenYoyo(selector) {
   gsap.utils.toArray(selector).forEach((el) => {
     const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: el,
-        start: "top 85%",
-        toggleActions: "play none none none",
-      }
+      scrollTrigger: createScrollTrigger(el),
     });
 
     tl.from(el, {
@@ -510,11 +441,7 @@ function gsapRollInLeft(selector) {
       duration: 1.2,
       ease: "back.out(1.2)",
       transformOrigin: "center center",
-      scrollTrigger: {
-        trigger: el,
-        start: "top 85%",
-        toggleActions: "play none none none",
-      },
+      scrollTrigger: createScrollTrigger(el),
     });
   });
 }
@@ -529,19 +456,16 @@ function gsap_rotate_bl__float(selector) {
       duration: 1.2,
       ease: "back.out(1.2)",
       transformOrigin: "left bottom",
-      scrollTrigger: {
-        trigger: el,
-        start: "top 85%",
-        toggleActions: "play none none none",
-      },
+      scrollTrigger: createScrollTrigger(el),
       onComplete: () => {
         gsap.to(el, {
           y: -15,
           rotation: 3,
           duration: 1.5,
           ease: "sine.inOut",
-          repeat: -1,     // lặp vô hạn
-          yoyo: true      // quay lại vị trí ban đầu
+          repeat: -1,
+          yoyo: true,
+          overwrite: false,
         });
       }
     });
