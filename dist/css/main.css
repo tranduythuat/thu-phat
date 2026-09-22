@@ -983,6 +983,7 @@ body.lang-popup-active .music-box {
   box-sizing: border-box;
   outline: none;
   margin-bottom: 6%;
+  font-size: 14px;
 }
 .rsvp .form-group.options-group {
   display: flex;
@@ -1050,6 +1051,7 @@ body.lang-popup-active .music-box {
   }
   .rsvp .form-group textarea.input-text {
     border-radius: 1.5094339623vw;
+    font-size: 2.641509434vw;
   }
   .rsvp .form-actions button.btn {
     border-radius: 1.5094339623vw;

@@ -90,6 +90,7 @@
             box-sizing: border-box;
             outline: none;
             margin-bottom: 6%;
+            font-size: 14px;
         }
     }
 
@@ -172,6 +173,7 @@
 
             textarea.input-text {
                 border-radius: calc((8 / 530) * 100vw);
+                font-size: calc((14 / 530) * 100vw);
             }
         }
 

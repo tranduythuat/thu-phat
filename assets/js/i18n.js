@@ -15,18 +15,18 @@
             "invite.dayOfWeek": "Chủ Nhật",
             "invite.locationName": "Thiskyhall Sala <br> Trung tâm Hội nghị",
             "invite.address":
-                '<span class="bold">Tầng 20 – Không gian phía trên sảnh</span> <br>Số 10, đường Mai Chí Thọ, phường An Khánh, TP. Hồ Chí Minh',
+                '<span class="bold">Tầng 20 – Sảnh Space Above</span> <br>Số 10, đường Mai Chí Thọ, phường An Khánh, TP. Hồ Chí Minh',
             "invite.mapBtn": "BẢN ĐỒ",
 
             "timeline.title": "Timeline",
             "timeline.item1": "Đón <br> khách",
             "timeline.item2": "Lễ <br> Vows",
             "timeline.item3": "Tiệc <br> cocktail",
-            "timeline.item4": "Tiệc <br> chiêu đãi",
-            "timeline.item5": "Tiệc tùng",
+            "timeline.item4": "Tiệc tối",
+            "timeline.item5": "Party",
 
             "dresscode.title": "Trang Phục",
-            "dresscode.subtext": "Lịch sự",
+            "dresscode.subtext": "Trang trọng",
 
             "rsvp.title": "Xác nhận tham dự",
             "rsvp.subtext":
