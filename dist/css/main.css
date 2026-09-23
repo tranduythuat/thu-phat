@@ -781,6 +781,7 @@ body.lang-popup-active .music-box {
 .timeline .content .event-block .timeline-item:nth-of-type(1) {
   right: 26%;
   top: 5%;
+  width: 153px;
 }
 .timeline .content .event-block .timeline-item:nth-of-type(2) {
   left: 14%;
@@ -797,8 +798,9 @@ body.lang-popup-active .music-box {
   max-width: 122px;
 }
 .timeline .content .event-block .timeline-item:nth-of-type(4) {
-  left: 18%;
+  left: 10%;
   top: 65%;
+  width: 160px;
 }
 .timeline .content .event-block .timeline-item:nth-of-type(5) {
   right: 18%;
@@ -826,11 +828,17 @@ body.lang-popup-active .music-box {
   .timeline .content .event-block .timeline-item .label {
     font-size: 3.0188679245vw;
   }
+  .timeline .content .event-block .timeline-item:nth-of-type(2) {
+    width: 28.8679245283vw;
+  }
   .timeline .content .event-block .timeline-item:nth-of-type(2) .icon img {
     max-width: 20.7547169811vw;
   }
   .timeline .content .event-block .timeline-item:nth-of-type(3) .icon img {
     max-width: 23.0188679245vw;
+  }
+  .timeline .content .event-block .timeline-item:nth-of-type(4) {
+    width: 30.1886792453vw;
   }
   .timeline .content .event-block .timeline-item:nth-of-type(5) .icon img {
     max-width: 20.7547169811vw;

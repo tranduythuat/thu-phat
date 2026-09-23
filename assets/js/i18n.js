@@ -19,9 +19,9 @@
             "invite.mapBtn": "BẢN ĐỒ",
 
             "timeline.title": "Timeline",
-            "timeline.item1": "Đón <br> khách",
-            "timeline.item2": "Lễ <br> Vows",
-            "timeline.item3": "Tiệc <br> cocktail",
+            "timeline.item1": "Đón khách",
+            "timeline.item2": "Lễ  Vows",
+            "timeline.item3": "Tiệc cocktail",
             "timeline.item4": "Tiệc tối",
             "timeline.item5": "Party",
 
@@ -57,10 +57,10 @@
             "invite.mapBtn": "MAPS",
 
             "timeline.title": "Timeline",
-            "timeline.item1": "Welcome <br> guests",
-            "timeline.item2": "Vows <br> CEREMONY",
-            "timeline.item3": "COCKTAIL & <br> DRINK",
-            "timeline.item4": "Dinner <br> RECEPTION",
+            "timeline.item1": "Welcome guests",
+            "timeline.item2": "Vows CEREMONY",
+            "timeline.item3": "COCKTAIL & DRINK",
+            "timeline.item4": "Dinner RECEPTION",
             "timeline.item5": "PARTY",
 
             "dresscode.title": "Dress Code",
