@@ -828,7 +828,7 @@ body.lang-popup-active .music-box {
   .timeline .content .event-block .timeline-item .label {
     font-size: 3.0188679245vw;
   }
-  .timeline .content .event-block .timeline-item:nth-of-type(2) {
+  .timeline .content .event-block .timeline-item:nth-of-type(1) {
     width: 28.8679245283vw;
   }
   .timeline .content .event-block .timeline-item:nth-of-type(2) .icon img {
